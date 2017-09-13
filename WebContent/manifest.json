@@ -1,0 +1,44 @@
+{
+	"sap.app" : {
+		"id" : "componenet"
+	},
+    "sap.ui5" :{
+    	"rootView" :"manifestcomponenet2.App",
+    	"routing" : {
+    		"config" :{
+    			"routerClass" : "sap.m.routing.Router",
+    			"viewType":   "XML",
+    			"controlId" : "idapp"
+    		
+    		},
+    		 "routes": [
+			                       {
+                                   "pattern": "SplitApp",
+                                    "name": "route1",
+                                    "viewName": "manifestcomponenet2.splitapp",
+                                        "targetControl" : "idapp",
+                                       "targetAggregation" : "pages",
+                                            "subroutes" : [{
+                                              "pattern": "SplitApp/",
+                                              "name": "route2",
+                                              "viewName": "manifestcomponenet2.page1",
+                                              "targetControl" : "idsplitapp",
+                                              "targetAggregation" : "masterPages",
+                                   "subroutes" : [{
+                                                 "pattern" : "SplitApp/",
+                                                    "name" : "route3",   
+                                                "viewName": "manifestcomponenet2.detail",
+                                                "targetAggregation" : "detailPages"
+                                                   },
+                                                   {
+                                                   "pattern" : "",
+                                                    "name" : "route4",
+                                                    "viewName": "manifestcomponenet2.page2",
+                                                     "targetAggregation" : "masterPages"
+                                                                }]
+		                                           }]
+		                                           }]
+			           
+	   }
+	}
+}
